@@ -1,0 +1,7 @@
+# SingingNumbers robots.txt
+# https://singingnumbers.app/robots.txt
+
+User-agent: *
+Allow: /
+
+Sitemap: https://singingnumbers.app/sitemap.xml

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — SingingNumbers</title>
+  <meta name="description" content="SingingNumbers Privacy Policy. Nothing is transmitted off your device. Zero permissions. Two on-device user-preference values, never synced.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://singingnumbers.app/privacy-policy.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Privacy Policy — SingingNumbers">
+  <meta property="og:url" content="https://singingnumbers.app/privacy-policy.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Privacy Policy",
+    "url": "https://singingnumbers.app/privacy-policy.html",
+    "isPartOf": { "@type": "WebSite", "url": "https://singingnumbers.app/", "name": "SingingNumbers" }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="/">SingingNumbers</a></h1>
+    <p class="tagline">Privacy Policy</p>
+  </header>
+
+  <main class="legal">
+    <p>
+      <strong>Effective date:</strong> <em>[To be filled before publishing]</em><br>
+      <strong>Publisher:</strong> ZADIO EOOD, registered in the Republic of
+      Bulgaria (EU). Registered office: Ploshtad Han Kubrat 1, Ruse,
+      Bulgaria.<br>
+      <strong>Contact:</strong>
+      <a href="mailto:SingingNumbers.app@gmail.com">SingingNumbers.app@gmail.com</a>
+    </p>
+    <p>
+      Because the App collects no personal data (see below), no separate
+      "data controller" designation is required under the GDPR or any
+      equivalent regulation.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      SingingNumbers does not transmit any data off your device. The app has
+      no internet permission, no analytics, no crash-reporting service, and
+      no advertising. The only information stored on your device is a small
+      set of user-preference values (selected musical scale, octave,
+      instrument, language, tempo / rhythm / pitch / haptic settings, and
+      any calculations you choose to save via the "Saved" screen). All of
+      this lives in the app's private storage, never leaves the device,
+      and can be erased with Android's standard "Clear data" / uninstall
+      actions.
+    </p>
+
+    <h2>What the app does</h2>
+    <p>
+      SingingNumbers is a free, fully offline calculator that maps each digit
+      and operator to a musical note. The current version exposes six
+      user-facing screens through the navigation drawer:
+    </p>
+    <ul>
+      <li><strong>Calculator</strong> — arithmetic with a Material 3 keypad; every keypress and the final result are sung as a short musical phrase. A <em>Big Calculator</em> mode extends the keypad to 24 notes (0&ndash;23).</li>
+      <li><strong>Saved</strong> — view, replay, and manage calculations you have chosen to save.</li>
+      <li><strong>Scales</strong> — pick which musical scale the calculator sings in.</li>
+      <li><strong>Octaves</strong> — pick which octave range the calculator sings in.</li>
+      <li><strong>Instruments</strong> — pick which synthesised instrument timbre the calculator uses.</li>
+      <li><strong>Settings</strong> — haptic feedback toggle, tempo, rhythm, and pitch preferences.</li>
+    </ul>
+    <p>All six screens run entirely on your device. A seventh, developer-only Diagnostics screen exists in the codebase but is intentionally hidden from the drawer in published builds.</p>
+
+    <h2>How the app works</h2>
+    <ul>
+      <li>All arithmetic is performed locally on your device using a deterministic Shunting-Yard expression evaluator.</li>
+      <li>Sound synthesis is performed in real time on-device. The app uses Google Oboe (a low-latency audio output library — output only, no microphone access) and Android's audio output APIs. No audio recording, audio uploads, or audio downloads are possible.</li>
+      <li>The app declares zero Android permissions. It does not declare INTERNET or ACCESS_NETWORK_STATE, so the operating system will refuse any attempt by the app's process to open a network socket.</li>
+      <li>The app contains no analytics, crash-reporting, advertising, or tracking SDKs of any kind. No Firebase, no Google Analytics, no Crashlytics, no Sentry, no Bugsnag, no Facebook SDK, no AppsFlyer, no advertising IDs.</li>
+    </ul>
+
+    <h2>Permissions</h2>
+    <p>SingingNumbers requests <strong>zero permissions</strong>.</p>
+    <p>
+      It does not access your contacts, location, microphone, camera,
+      storage, biometrics, calendar, phone state, Bluetooth, Wi-Fi, NFC, or
+      any other sensor or system service.
+    </p>
+
+    <h2>Data stored on your device</h2>
+    <p>
+      To remember your preferences across launches and to support the
+      Saved screen, the app stores a small set of values in its private
+      SharedPreferences area on your device:
+    </p>
+    <p><strong>Preference files</strong> (user-chosen settings only):</p>
+    <ul>
+      <li><code>singing_numbers_instruments.xml</code> &mdash; selected instrument timbre</li>
+      <li><code>singing_numbers_scales.xml</code> &mdash; selected musical scale</li>
+      <li><code>singing_numbers_octaves</code> &mdash; selected octave range</li>
+      <li><code>singing_numbers_settings</code> &mdash; haptic on/off, tempo, rhythm, and pitch sliders</li>
+      <li><code>singing_numbers_big_calc</code> &mdash; Big Calculator mode toggle</li>
+      <li><code>language_prefs</code> &mdash; selected in-app UI language</li>
+    </ul>
+    <p>
+      <strong>Saved-calculations file</strong> &mdash; created only if you
+      tap "Save" on the Saved screen; otherwise it does not exist:
+    </p>
+    <ul>
+      <li><code>saved_expressions</code> &mdash; JSON array of the expressions you chose to save (title + expression text). The app never auto-saves any expression.</li>
+    </ul>
+    <p>All of the above:</p>
+    <ul>
+      <li>Live in the app's private app-data folder (Android sandbox), where no other app on your device can read them.</li>
+      <li>Are <strong>never</strong> transmitted off the device &mdash; the app has no INTERNET permission, so a network upload is technically impossible.</li>
+      <li>Are <strong>excluded</strong> from Android Auto Backup and Cloud Backup, so they are not synced to your Google account either.</li>
+      <li>Can be erased by uninstalling the app, by Android Settings &rarr; Apps &rarr; SingingNumbers &rarr; Storage &rarr; "Clear data", or (individual saved expressions) from inside the Saved screen.</li>
+    </ul>
+    <p>
+      No other files, databases, caches, or logs are written by the app.
+      Calculator expressions you have <em>not</em> explicitly saved are
+      <strong>not</strong> persisted &mdash; they exist only while displayed on
+      screen and are discarded as soon as you clear the display, navigate
+      away, or close the app.
+    </p>
+
+    <h2>Crash handling</h2>
+    <p>
+      If the app crashes, an in-process repository captures a one-line
+      summary (exception class, message, top stack frame, the thread name,
+      and a millisecond timestamp). This summary lives only in process
+      memory — it is never written to disk and never transmitted off the
+      device. When the app process is killed, the summary is gone.
+    </p>
+    <p>
+      The summary exists solely so the in-app developer Diagnostics screen
+      (intentionally hidden from the public navigation drawer in this
+      release) can show "what blew up last time" to a developer running the
+      app on their own device. It is never sent to the developer or to
+      anyone else.
+    </p>
+
+    <h2>Third-party software</h2>
+    <p>
+      SingingNumbers links open-source libraries (including AndroidX,
+      Jetpack Compose, Hilt, Kotlin Coroutines, Timber, and Google Oboe)
+      into the distributed APK / AAB. None of these libraries are configured
+      to collect or transmit data when used as integrated by SingingNumbers.
+    </p>
+
+    <h2>Age rating and children's privacy</h2>
+    <p>
+      SingingNumbers is published for a target audience of <strong>Teen (13+)</strong>
+      on Google Play. The app is <strong>not</strong> enrolled in Google Play's
+      "Designed for Families" programme.
+    </p>
+    <p>
+      The app collects no personal information from any user, including users
+      under the age of 13 who may use the app despite the 13+ rating.
+      Because no data is collected or transmitted, the app does not require
+      parental consent under COPPA, GDPR-K, or any other regional
+      children-data regulation.
+    </p>
+
+    <h2>International users</h2>
+    <p>
+      Because no personal data is collected, processed, or transferred,
+      GDPR (EU), UK GDPR, CCPA / CPRA (California), LGPD (Brazil),
+      PIPEDA (Canada), and other privacy regulations do not impose
+      obligations on the developer beyond this disclosure. Users in any
+      jurisdiction can use the app with confidence that their personal
+      data remains entirely on their device and is never transmitted
+      anywhere by this app.
+    </p>
+
+    <h2>Changes to this policy</h2>
+    <p>
+      If this policy changes, the updated text will be posted at this URL
+      and the "Effective date" line will be updated. Given the app's design
+      (zero data collection, zero network access), material changes are
+      unlikely.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      If you have any questions about this Privacy Policy, please contact:<br>
+      <a href="mailto:SingingNumbers.app@gmail.com">SingingNumbers.app@gmail.com</a>
+    </p>
+
+    <h2>License</h2>
+    <p>
+      SingingNumbers is licensed under the Apache License, Version 2.0.
+      A public source-code repository is not currently available for this
+      version of the App. The Apache 2.0 license still applies to anyone
+      who lawfully receives a copy of the source code, granting them the
+      right to use, modify, and redistribute it under the license's
+      terms. If a public repository is published in the future, this
+      notice will be updated with the URL.
+    </p>
+  </main>
+
+  <footer>
+    <nav>
+      <a href="/">Home</a> ·
+      <a href="privacy-policy.html">Privacy Policy</a> ·
+      <a href="terms-of-service.html">Terms of Service</a>
+    </nav>
+    <p>Contact: <a href="mailto:SingingNumbers.app@gmail.com">SingingNumbers.app@gmail.com</a></p>
+  </footer>
+</body>
+</html>

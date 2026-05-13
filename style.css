@@ -1,0 +1,292 @@
+/* SingingNumbers Website — Simple, Clean, Accessible */
+
+:root {
+  --color-primary: #6750A4;
+  --color-primary-light: #E8DEF8;
+  --color-surface: #FFFBFE;
+  --color-surface-variant: #E7E0EC;
+  --color-on-surface: #1C1B1F;
+  --color-on-surface-variant: #49454F;
+  --color-outline: #79747E;
+  --max-width: 800px;
+  --spacing: 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #D0BCFF;
+    --color-primary-light: #4F378B;
+    --color-surface: #1C1B1F;
+    --color-surface-variant: #49454F;
+    --color-on-surface: #E6E1E5;
+    --color-on-surface-variant: #CAC4D0;
+    --color-outline: #938F99;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--color-on-surface);
+  background-color: var(--color-surface);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  padding: calc(var(--spacing) * 2) var(--spacing);
+  background-color: var(--color-primary);
+  color: white;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+header h1 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header .tagline {
+  margin: 0.5rem 0 0;
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing);
+}
+
+main.legal {
+  padding-top: calc(var(--spacing) * 2);
+}
+
+section {
+  margin-bottom: calc(var(--spacing) * 2);
+}
+
+h2 {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-top: calc(var(--spacing) * 1.5);
+  margin-bottom: var(--spacing);
+  border-bottom: 2px solid var(--color-surface-variant);
+  padding-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code {
+  background-color: var(--color-surface-variant);
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  font-family: "SF Mono", Monaco, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-outline);
+}
+
+th {
+  background-color: var(--color-surface-variant);
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: var(--color-surface-variant);
+}
+
+.hero {
+  text-align: center;
+  padding: calc(var(--spacing) * 2) 0;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  border-bottom: none;
+  color: var(--color-on-surface);
+}
+
+.cta {
+  margin-top: var(--spacing);
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.875rem 2rem;
+  border-radius: 100px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.button:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.button--disabled {
+  background-color: var(--color-outline);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button--disabled:hover {
+  opacity: 1;
+}
+
+.features ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.features li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-surface-variant);
+}
+
+.features li:last-child {
+  border-bottom: none;
+}
+
+.privacy-summary {
+  background-color: var(--color-primary-light);
+  padding: var(--spacing);
+  border-radius: 12px;
+}
+
+.privacy-summary h2 {
+  margin-top: 0;
+  border-bottom: none;
+}
+
+.screenshots .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.screenshots figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface-variant);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.screenshots figure a {
+  display: block;
+  line-height: 0;
+}
+
+.screenshots figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 1 / 2;
+  object-fit: cover;
+  background-color: #000;
+}
+
+.screenshots figcaption {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  color: var(--color-on-surface-variant);
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: calc(var(--spacing) * 2) var(--spacing);
+  background-color: var(--color-surface-variant);
+  margin-top: calc(var(--spacing) * 2);
+}
+
+footer nav {
+  margin-bottom: 1rem;
+}
+
+footer nav a {
+  color: var(--color-on-surface-variant);
+}
+
+footer p {
+  color: var(--color-on-surface-variant);
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem;
+}
+
+footer .copyright {
+  font-size: 0.8rem;
+  opacity: 0.75;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+
+  th, td {
+    padding: 0.5rem;
+  }
+}
